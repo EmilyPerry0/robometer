@@ -269,9 +269,11 @@ def _load_checkpoint_weights_from_safetensors(
 
         ipdb.set_trace()  # Breakpoint if progress_head didn't load
 
-    # Verify adapter weights loaded correctly (if PEFT is enabled)
+    # Verify adapter weights loaded correctly only when this helper loads them.
+    # If load_adapters=False, PeftModel.from_pretrained has already loaded adapters
+    # and this helper only restores custom RBM weights.
     adapter_loaded_correctly = True
-    if cfg.use_peft and adapter_keys_before:
+    if cfg.use_peft and adapter_keys_before and load_adapters:
         model_state_dict_after = model.state_dict()
         adapter_keys_after = [k for k in model_state_dict_after.keys() if "lora_A" in k or "lora_B" in k]
 
