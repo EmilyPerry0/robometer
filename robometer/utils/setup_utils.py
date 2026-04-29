@@ -1003,7 +1003,7 @@ def setup_model_and_processor(
                 has_adapter_weights = checkpoint_peft_info["has_adapter_weights"]
                 adapter_load_path = checkpoint_peft_info["adapter_load_path"] or checkpoint_path
 
-                if has_adapter_weights and not has_adapter_files and not model_has_peft(model):
+                if (has_adapter_files or has_adapter_weights) and not model_has_peft(model):
                     if peft_config is None:
                         raise ValueError("PEFT is enabled but peft_config is None. Cannot reconstruct adapters.")
                     logger.info(f"Attaching PEFT to target '{checkpoint_target}' before loading checkpoint")

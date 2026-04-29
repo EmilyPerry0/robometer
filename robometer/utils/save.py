@@ -77,7 +77,8 @@ def _save_trainer_checkpoint_files(
     peft_target, peft_module = _get_rbm_peft_target(model)
 
     if peft_module is not None:
-        logger.info(f"Detected PEFT target '{peft_target}' - saving adapter weights with metadata")
+        logger.info(f"Detected PEFT target '{peft_target}' - saving full model snapshot and adapter metadata")
+        trainer.save_model(ckpt_dir)
         peft_module.save_pretrained(ckpt_dir)
 
         peft_meta_path = os.path.join(ckpt_dir, "peft_target_module.json")
@@ -135,6 +136,7 @@ def _save_trainer_checkpoint_files(
         trainer.save_model(ckpt_dir)
 
     if args.should_save:
+        os.makedirs(args.output_dir, exist_ok=True)
         trainer.save_state()
         trainer_state_src = os.path.join(args.output_dir, "trainer_state.json")
         if os.path.exists(trainer_state_src):
