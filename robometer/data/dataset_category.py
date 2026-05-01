@@ -279,6 +279,24 @@ DATASET_MAP = {
             ],
         ],
     },
+    "libero_all": {
+        "train": [
+            "abraranwar_libero_rfm_libero256_10",
+            "abraranwar_libero_rfm_libero256_object",
+            "abraranwar_libero_rfm_libero256_spatial",
+            "abraranwar_libero_rfm_libero256_goal",
+            "ykorkmaz_libero_failure_rfm_libero_10_failure",
+            "ykorkmaz_libero_failure_rfm_libero_object_failure",
+            "ykorkmaz_libero_failure_rfm_libero_spatial_failure",
+            "ykorkmaz_libero_failure_rfm_libero_goal_failure",
+            "abraranwar_libero_rfm_libero256_90",
+            "ykorkmaz_libero_failure_rfm_libero_90_failure",
+        ],
+        "eval": [
+                "abraranwar_libero_rfm_libero256_90",
+                "ykorkmaz_libero_failure_rfm_libero_90_failure",
+        ],
+    },
     "rbm-1m-id": {
         "train": [
             # franka
