@@ -268,3 +268,13 @@ export ROBOMETER_PROCESSED_DATASETS_PATH=/path/to/save/processed_datasets
 ## 📑 License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## BibTeX
+```
+@inproceedings{liang2026robometer,
+  title     = {Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons},
+  author={Anthony Liang and Yigit Korkmaz and Jiahui Zhang and Minyoung Hwang and Abrar Anwar and Sidhant Kaushik and Aditya Shah and Alex S. Huang and Luke Zettlemoyer and Dieter Fox and Yu Xiang and Anqi Li and Andreea Bobu and Abhishek Gupta and Stephen Tu and Erdem Biyik and Jesse Zhang},
+  year={2026},
+  booktitle={Robotics: Science and Systems 2026},
+}
+```
