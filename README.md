@@ -168,7 +168,7 @@ See `robometer/configs/experiment_configs.py` for more config options.
 Preprocess a new dataset, LoRA fine-tune from **Robometer-4B** on your own data, upload the model to the Hub, and run inference:
 
 - **Preprocessing:** Add your dataset to the preprocess config and run the preprocessor; for raw videos (e.g. [MINT-SJTU/RoboFAC-dataset](https://huggingface.co/datasets/MINT-SJTU/RoboFAC-dataset)), convert to RBM format first via `dataset_upload`, then preprocess.
-- **Fine-tuning:** Set `model.use_peft=true` and `training.resume_from_checkpoint=robometer/Robometer-4B`, then train on your dataset.
+- **Fine-tuning:** Set `model.use_peft=true` and `training.load_from_checkpoint=robometer/Robometer-4B`, then train on your dataset.
 - **Upload & inference:** Use `robometer/utils/upload_to_hub.py` to push checkpoints; run `scripts/example_inference_local.py` with your Hub model.
 
 Full step-by-step: **[FINETUNE_ROBOMETER.md](FINETUNE_ROBOMETER.md)**.
