@@ -74,7 +74,7 @@ Inference runs a **pretrained RBM model** on your own videos to get per-frame pr
 **Pretrained models (Hugging Face):**
 
 - **[Robometer-4B](https://huggingface.co/robometer/Robometer-4B)** — general-purpose, trained on RBM-1M
-- **[Robometer-LIBERO](jesbu1/robometer-4b-fft-libero)** - fine-tuned Robometer checkpoint on LIBERO-90, Object, Goal, Spatial, 10 + associated failure data. Try this if you need to do LIBERO-90 RL or if the default Robometer checkpoint doesn't perform as well.
+- **[Robometer-LIBERO](https://huggingface.co/jesbu1/robometer-4b-fft-libero)** - fine-tuned Robometer checkpoint on LIBERO-90, Object, Goal, Spatial, 10 + associated failure data. Try this if you need to do LIBERO-90 RL or if the default Robometer checkpoint doesn't perform as well.
 
 ### Inference via HTTP server
 
