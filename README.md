@@ -140,8 +140,6 @@ uv run accelerate launch --config_file robometer/configs/distributed/fsdp.yaml -
   custom_eval.reward_alignment=[rbm-1m-ood] \
   custom_eval.policy_ranking=[rbm-1m-ood] \
   custom_eval.confusion_matrix=[rbm-1m-ood] \
-  logging.save_best.metric_names=[eval_p_rank/kendall_last_utd_so101_clean_top,eval_p_rank/kendall_last_usc_xarm,eval_p_rank/kendall_last_usc_franka,eval_p_rank/kendall_last_rfm_new_mit_franka_nowrist,eval_p_rank/kendall_last_usc_trossen] \
-  logging.save_best.greater_is_better=[True,True,True,True,True]
 ```
 
 **LIBERO: train on 10 / object / spatial / goal, test on 90.**
