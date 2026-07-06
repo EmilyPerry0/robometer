@@ -883,14 +883,8 @@ def load_model_from_hf(
             else:
                 raise ValueError(f"config.yaml not found in checkpoint directory or parent directory: {resolved_path}")
     else:
-        try:
-            from huggingface_hub import hf_hub_download
-        except ImportError as e:
-            raise ImportError("huggingface_hub not available. Install with: pip install huggingface_hub") from e
-        # Download config with revision if specified
-        logger.info(f"Downloading config.yaml from HuggingFace Hub: {repo_id}@{revision or 'latest'}")
-        config_path = hf_hub_download(repo_id=repo_id, filename="config.yaml", revision=revision, token=hub_token)
-        logger.info(f"Downloaded config.yaml to: {config_path}")
+        config_path = "robometer/configs/config.yaml"
+        logger.info(f"Using locally sourced config.yaml...")
 
     with open(config_path) as f:
         yaml_text = f.read()
