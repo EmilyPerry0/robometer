@@ -847,8 +847,8 @@ def load_model_from_hf(
     if resolved_path.exists():
         # Local checkpoint: look for config.yaml
         candidate_paths = [
-            "robometer/configs/config.yaml",
-            "../robometer/configs/config.yaml",
+            Path("robometer/configs/config.yaml"),
+            Path("../robometer/configs/config.yaml"),
         ]
         config_path = None
         for candidate in candidate_paths:
